@@ -1,0 +1,29 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /user-profile/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /private/
+
+Disallow: /*?sort=
+Disallow: /*?Title=
+Disallow: /*?title=
+Disallow: /*?SortOrder=
+Disallow: /*?categories=
+Disallow: /*?grades=
+Disallow: /*?majors=
+Disallow: /*?lessons=
+Disallow: /*?contentTypes=
+Disallow: /*?filter=
+Disallow: /*?page=
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.xls$
+
+
+Sitemap: https://set.ir/sitemap.xml
