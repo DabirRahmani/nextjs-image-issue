@@ -1,10 +1,10 @@
 #!/bin/bash
 
-set -e  # Exit immediately if a command exits with a non-zero status.
+set -e
 
-# git pull
-docker build -f Dockerfile --network host --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY --build-arg NPM_REGISTRY=$NPM_REGISTRY -t set-front-prod .
+# Build production image
+docker build -t set-front-prod .
+
+# Save image for deployment
 mkdir ~/frontend || true
 docker save -o ~/frontend/frontend.tar set-front-prod
-# docker rm -f set-front || true
-# docker run --restart always -d --name set-front -p 3004:3000 set-front

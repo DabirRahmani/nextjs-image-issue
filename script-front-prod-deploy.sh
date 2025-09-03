@@ -1,9 +1,12 @@
 #!/bin/bash
 
-set -e  # Exit immediately if a command exits with a non-zero status.
+set -e
 
-# git pull
-# docker build -f Dockerfile.prod -t set-front .
+# Load saved image
 docker load -i /home/setrebornsrv/frontend/frontend.tar
+
+# Remove existing container
 docker rm -f set-front || true
+
+# Run new container
 docker run --restart always -d --name set-front -p 3004:3000 set-front-prod

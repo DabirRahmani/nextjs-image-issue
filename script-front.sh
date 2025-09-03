@@ -1,8 +1,12 @@
 #!/bin/bash
 
-set -e  # Exit immediately if a command exits with a non-zero status.
+set -e
 
-# git pull
-docker build --network host --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY --build-arg NPM_REGISTRY=$NPM_REGISTRY -t set-front .
+# Build Docker image
+docker build -t set-front .
+
+# Remove existing container
 docker rm -f set-front || true
+
+# Run new container
 docker run --restart always -d --name set-front -p 3004:3000 set-front
